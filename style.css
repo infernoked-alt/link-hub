@@ -271,3 +271,15 @@ body {
     min-height: auto;
   }
 }
+
+/* Footer elements */
+.footer {
+  text-align: center;
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: #71717a;
+  margin-top: 1.5rem;
+  letter-spacing: 0.05em;
+  padding: 1rem 0;
+  width: 100%;
+}
