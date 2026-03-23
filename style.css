@@ -1,16 +1,10 @@
 :root {
-  --background: 240 10% 3.9%;
+  --background: 240 10% 4%;
   --foreground: 0 0% 98%;
-  --card: 240 10% 3.9%;
-  --card-foreground: 0 0% 98%;
-  --primary: 0 0% 98%;
-  --primary-foreground: 240 5.9% 10%;
-  --muted: 240 3.7% 15.9%;
-  --muted-foreground: 240 5% 64.9%;
-  --accent: 240 3.7% 15.9%;
-  --accent-foreground: 0 0% 98%;
-  --border: 240 3.7% 15.9%;
-  --radius: 0.75rem; 
+  --muted: 240 5% 15%;
+  --muted-foreground: 240 5% 65%;
+  --border: 0 0% 12%;
+  --radius: 1rem; 
 }
 
 * {
@@ -19,8 +13,16 @@
   box-sizing: border-box;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 body {
-  background-color: hsl(var(--background));
+  background-color: #1c1c1f; /* Premium dark gray */
+  background-image: 
+    radial-gradient(circle at 50% -20%, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
+  background-attachment: fixed;
   color: hsl(var(--foreground));
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -29,6 +31,7 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center; /* Center everything vertically */
 }
 
 .page-wrapper {
@@ -38,30 +41,32 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  animation: fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
-@keyframes fade-in {
-  from { opacity: 0; transform: translateY(15px); }
+@keyframes fade-in-up {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Typography styles matching shadcn */
+/* Typography styles */
 .title {
   font-size: 1.5rem; /* 24px */
   line-height: 2rem;
   font-weight: 700;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
   margin-bottom: 0.25rem;
 }
 .profile-box .title {
   font-size: 2.25rem; /* 36px */
   line-height: 2.5rem;
   margin-bottom: 0.5rem;
+  color: hsl(var(--foreground));
 }
 
 .description {
-  font-size: 0.875rem; /* 14px */
+  font-size: 0.875rem; 
   line-height: 1.25rem;
   color: hsl(var(--muted-foreground));
 }
@@ -69,10 +74,11 @@ body {
   font-size: 1rem;
   line-height: 1.5rem;
   max-width: 90%;
+  color: #a1a1aa; /* Zinc 400 */
 }
 
 .card-title {
-  font-size: 1.125rem; /* 18px */
+  font-size: 1.125rem; 
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.025em;
@@ -81,13 +87,10 @@ body {
 
 .card-description {
   font-size: 0.875rem;
-  color: hsl(var(--muted-foreground));
+  color: #71717a; /* Zinc 500 */
 }
 
 .text-muted-foreground { color: hsl(var(--muted-foreground)); }
-.bg-primary { background-color: hsl(var(--primary)); }
-.text-primary-foreground { color: hsl(var(--primary-foreground)); }
-.opacity-90 { opacity: 0.9; }
 
 /* Layout utilities */
 .flex { display: flex; }
@@ -98,16 +101,12 @@ body {
 .justify-between { justify-content: space-between; }
 .text-center { text-align: center; }
 .mt-auto { margin-top: auto; }
-.mt-2 { margin-top: 0.5rem; }
-.max-w-md { max-width: 28rem; }
-.h-full { height: 100%; }
-.mx-auto { margin-left: auto; margin-right: auto; }
 
 /* Bento Container */
 .bento-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem; /* 16px */
+  gap: 1.25rem; /* 20px for breathable modern spacing */
 }
 
 .col-span-2 { grid-column: span 2 / span 2; }
@@ -115,38 +114,59 @@ body {
 .col-span-4 { grid-column: span 4 / span 4; }
 .row-span-2 { grid-row: span 2 / span 2; }
 
-/* Card Component */
+/* Premium Glassmorphic Card (Aceternity/Shadcn blend) */
 .card {
-  background-color: hsl(var(--card));
-  color: hsl(var(--card-foreground));
-  border: 1px solid hsl(var(--border));
+  background-color: rgba(20, 20, 20, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius);
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 
+    0 4px 20px -2px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.03); /* Subtle top light */
   display: flex;
   flex-direction: column;
-  padding: 1.5rem; /* 24px */
+  padding: 1.5rem; 
   text-decoration: none;
-  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Optional subtle gloss inside cards */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, -20%), rgba(255,255,255,0.06), transparent 40%);
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+.card.hoverable:hover::before {
+  opacity: 1;
+}
+
+/* Card Hover Animation */
+.card.hoverable:hover {
+  background-color: rgba(30, 30, 35, 0.6);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px); /* Lift effect */
+  box-shadow: 
+    0 15px 30px -10px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05);
 }
 
 .card-header {
   display: flex;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  z-index: 1;
 }
 
 .card-content {
   display: flex;
   flex-direction: column;
-}
-
-.card.border-transparent {
-  border-color: transparent;
-}
-
-/* Card Hover Styles */
-.card.hoverable:hover {
-  background-color: hsl(var(--accent) / 0.5); 
-  border-color: hsl(var(--muted-foreground) / 0.3);
+  z-index: 1;
 }
 
 /* Specific elements */
@@ -156,41 +176,54 @@ body {
 
 .avatar {
   display: flex;
-  height: 3rem; /* 48px */
-  width: 3rem;
+  height: 3.5rem; 
+  width: 3.5rem;
   position: relative;
   overflow: hidden;
-  border-radius: 9999px; /* full circle */
+  border-radius: 9999px; 
   align-items: center;
   justify-content: center;
-  background-color: hsl(var(--muted));
+  background: linear-gradient(135deg, #27272a, #09090b);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .avatar-fallback {
-  font-weight: 600;
-  font-size: 1rem;
-  color: hsl(var(--foreground));
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #fff;
 }
 
 .badge {
   display: inline-flex;
   align-items: center;
   border-radius: 9999px;
-  border: 1px solid hsl(var(--border));
-  background-color: transparent;
-  padding: 0.25rem 0.75rem; /* 4px 12px */
+  border: 1px solid rgba(255,255,255,0.1);
+  background-color: rgba(255,255,255,0.03);
+  padding: 0.35rem 1rem; 
   font-size: 0.75rem;
-  font-weight: 500;
-  transition: background-color 0.2s ease;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #e4e4e7;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
-.badge:hover {
-  background-color: hsl(var(--muted));
+.profile-box:hover .badge {
+  border-color: rgba(255,255,255,0.3);
+  background-color: rgba(255,255,255,0.1);
 }
 
 .icon {
-  width: 1.25rem; /* 20px */
-  height: 1.25rem;
+  width: 1.5rem; 
+  height: 1.5rem;
+  color: #a1a1aa;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.card.hoverable:hover .icon {
+  color: #fff;
+  transform: scale(1.1);
 }
 
 /* Social Box */
@@ -202,41 +235,24 @@ body {
 }
 
 .social-icon {
-  width: 1.5rem; /* 24px */
+  width: 1.5rem; 
   height: 1.5rem;
-  color: hsl(var(--foreground));
+  color: #a1a1aa;
   margin-bottom: 0.75rem;
+  transition: all 0.3s ease;
 }
 
 .social-label {
   font-size: 0.75rem;
-  font-weight: 500;
-  color: hsl(var(--muted-foreground));
+  font-weight: 600;
+  color: #71717a;
+  transition: color 0.3s ease;
 }
 
-/* Call to Action Box */
-.cta-box {
-  padding: 4rem 2rem;
-}
-
-.cta-box .title {
-  font-size: 2rem;
-  font-weight: 800;
-}
-
-.cta-box .description {
-  color: hsl(var(--primary-foreground));
-  font-size: 1rem;
-}
-
-/* Footer */
-.footer {
-  text-align: center;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: hsl(var(--muted-foreground));
-  margin-top: 2rem;
-  letter-spacing: 0.05em;
+.card.hoverable:hover .social-icon,
+.card.hoverable:hover .social-label {
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 /* Responsive */
@@ -253,9 +269,5 @@ body {
   
   .profile-box {
     min-height: auto;
-  }
-
-  .cta-box {
-    padding: 3rem 1.5rem;
   }
 }
