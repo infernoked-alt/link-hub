@@ -3,93 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Link Hub | Shaxsiy Sahifa</title>
+    <title>Murodjon Ergashev | Professional Link Hub</title>
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="bento-container fade-in">
-        <!-- Main Profile Box -->
-        <div class="bento-item profile-box slide-up">
-            <div class="header-content">
-                <div class="initials-avatar">ME</div>
-                <div class="badge">Hamkorlikka tayyor</div>
+<body class="dark">
+    <div class="page-wrapper">
+        <main class="bento-container">
+            <!-- Main Profile Box -->
+            <div class="card profile-box col-span-2 row-span-2">
+                <div class="card-header justify-between items-start">
+                    <div class="avatar">
+                        <span class="avatar-fallback">ME</span>
+                    </div>
+                    <div class="badge">Hamkorlikka tayyor</div>
+                </div>
+                <!-- Profile details aligned at the bottom -->
+                <div class="card-content mt-auto">
+                    <h1 class="title">Murodjon Ergashev</h1>
+                    <p class="description">Katta dasturiy ta'minot muhandisi. Murakkab loyihalarni xalqaro darajadagi premium mahsulotlarga aylantiraman.</p>
+                </div>
             </div>
-            <div class="profile-info">
-                <h1 class="name">Murodjon Ergashev</h1>
-                <p class="description">Katta dasturiy ta'minot muhandisi. Murakkab loyihalarni xalqaro darajadagi premium mahsulotlarga aylantiraman.</p>
+
+            <!-- Portfolio Box -->
+            <a href="#" class="card hoverable col-span-2">
+                <div class="card-header">
+                    <i data-lucide="briefcase" class="icon text-muted-foreground"></i>
+                </div>
+                <div class="card-content mt-auto">
+                    <h3 class="card-title">Portfolio</h3>
+                    <p class="card-description">Eng saralangan va daromadli loyihalarim bilan tanishing.</p>
+                </div>
+            </a>
+
+            <!-- GitHub Box -->
+            <a href="#" class="card hoverable col-span-2">
+                <div class="card-header">
+                    <i data-lucide="github" class="icon text-muted-foreground"></i>
+                </div>
+                <div class="card-content mt-auto">
+                    <h3 class="card-title">GitHub</h3>
+                    <p class="card-description">Ochiq kodli arxitektura va texnik yechimlarim bazasi.</p>
+                </div>
+            </a>
+
+            <!-- Social Boxes Row -->
+            <a href="#" class="card hoverable social-box">
+                <i data-lucide="linkedin" class="social-icon"></i>
+                <span class="social-label">LinkedIn</span>
+            </a>
+            <a href="#" class="card hoverable social-box">
+                <i data-lucide="send" class="social-icon"></i>
+                <span class="social-label">Telegram</span>
+            </a>
+            <a href="#" class="card hoverable social-box">
+                <i data-lucide="twitter" class="social-icon"></i>
+                <span class="social-label">X</span>
+            </a>
+            <a href="#" class="card hoverable social-box">
+                <i data-lucide="youtube" class="social-icon"></i>
+                <span class="social-label">YouTube</span>
+            </a>
+
+            <!-- Contact Box -->
+            <a href="#" class="card hoverable col-span-2">
+                <div class="card-header">
+                    <i data-lucide="mail" class="icon text-muted-foreground"></i>
+                </div>
+                <div class="card-content mt-auto">
+                    <h3 class="card-title">Elektron pochta</h3>
+                    <p class="card-description">Taklifingizni bering. Ideal natija kafolatlangan.</p>
+                </div>
+            </a>
+
+            <!-- Resume Box -->
+            <a href="#" class="card hoverable col-span-2">
+                <div class="card-header">
+                    <i data-lucide="file-text" class="icon text-muted-foreground"></i>
+                </div>
+                <div class="card-content mt-auto">
+                    <h3 class="card-title">Rezyumeni ko'rish</h3>
+                    <p class="card-description">Global bozordagi xalqaro ko'nikmalarim tahlili.</p>
+                </div>
+            </a>
+
+            <!-- Call to Action Box -->
+            <div class="card cta-box col-span-4 bg-primary border-transparent">
+                <div class="card-content flex items-center justify-center text-center h-full">
+                    <h2 class="title text-primary-foreground">Vaqt — bu pul!</h2>
+                    <p class="description text-primary-foreground opacity-90 max-w-md mt-2 mx-auto">
+                        Raqobatni unuting. G'oyangizni birgalikda monopol mahsulotga aylantiramiz. Hoziroq harakatni boshlang.
+                    </p>
+                </div>
             </div>
-        </div>
+        </main>
 
-        <!-- Portfolio Box -->
-        <div class="bento-item portfolio-box slide-up" style="animation-delay: 0.1s;">
-            <i data-lucide="briefcase" class="bento-icon"></i>
-            <h3>Portfolio</h3>
-            <p>Eng saralangan va daromadli loyihalarim bilan tanishing.</p>
-        </div>
-
-        <!-- GitHub Box -->
-        <div class="bento-item github-box slide-up" style="animation-delay: 0.2s;">
-            <i data-lucide="github" class="bento-icon"></i>
-            <h3>GitHub</h3>
-            <p>Ochiq kodli arxitektura va texnik yechimlarim bazasi.</p>
-        </div>
-
-        <!-- Social Row -->
-        <div class="social-row slide-up" style="animation-delay: 0.3s;">
-            <a href="#" class="bento-item social-box">
-                <div class="social-icon-wrapper"><i data-lucide="linkedin" class="social-icon"></i></div>
-                <span>LinkedIn</span>
-            </a>
-            <a href="#" class="bento-item social-box">
-                <div class="social-icon-wrapper"><i data-lucide="send" class="social-icon"></i></div>
-                <span>Telegram</span>
-            </a>
-            <a href="#" class="bento-item social-box">
-                <div class="social-icon-wrapper"><i data-lucide="twitter" class="social-icon"></i></div>
-                <span>X</span>
-            </a>
-            <a href="#" class="bento-item social-box">
-                <div class="social-icon-wrapper"><i data-lucide="youtube" class="social-icon"></i></div>
-                <span>YouTube</span>
-            </a>
-        </div>
-
-        <!-- Contact Box -->
-        <div class="bento-item email-box slide-up" style="animation-delay: 0.4s;">
-            <div class="icon-header"><i data-lucide="mail"></i></div>
-            <h3>Elektron pochta</h3>
-            <p>Taklifingizni bering. Ideal natija kafolatlangan.</p>
-        </div>
-
-        <!-- Resume Box -->
-        <div class="bento-item resume-box slide-up" style="animation-delay: 0.5s;">
-            <div class="icon-header"><i data-lucide="file-text"></i></div>
-            <h3>Rezyumeni ko'rish</h3>
-            <p>Global bozordagi xalqaro ko'nikmalarim tahlili.</p>
-        </div>
-
-        <!-- Call to Action Box -->
-        <div class="cta-box slide-up" style="animation-delay: 0.6s;">
-            <h2>Vaqt — bu pul!</h2>
-            <p>Raqobatni unuting. G'oyangizni birgalikda monopol mahsulotga aylantiramiz. Hoziroq harakatni boshlang.</p>
-        </div>
-
-        <!-- Footer -->
-        <footer class="footer slide-up" style="animation-delay: 0.7s;">
+        <footer class="footer">
             <p>GLOBAL BENTO GRID STANDARDS — DEVELOPED BY LINK HUB</p>
         </footer>
     </div>
 
-
-
     <script>
-        // Initialize Lucide icons
         lucide.createIcons();
     </script>
 </body>
